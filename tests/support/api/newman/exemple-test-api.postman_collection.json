@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "97ef47fa-d791-4971-914b-e484cec65a6e",
+		"name": "treinamento-test-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consulta Ticket",
+			"item": [
+				{
+					"name": "VisualizarTickets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc362e63-be38-4c43-a8bf-bab88282dc41",
+								"exec": [
+									"pm.test(\"Should return Status Code 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Deve retornar o ID do cliente\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.email_config_id).to.equal(3000003883); ",
+									"});",
+									"",
+									"pm.test('Content-Type header is correct', () => {",
+									"    pm.response.to.have.header('Content-Type', 'application/json; charset=utf-8')",
+									"})",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Response time is less than 4000ms\"] = responseTime < 4000;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "developers@treinamento.net",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Sxxxxxx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://treinamento.freshdesk.com/api/v2/tickets/27259",
+							"protocol": "https",
+							"host": [
+								"treinamento",
+								"freshdesk",
+								"com"
+							],
+							"path": [
+								"api",
+								"v2",
+								"tickets",
+								"27259"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
