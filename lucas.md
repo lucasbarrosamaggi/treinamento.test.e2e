@@ -33,3 +33,5 @@ Adicionar arquivo para ser enviado para o Git.
 	git add .
 Commitar na branch
 	git commit -m "O que vao subir"
+Enviar os arquivos 
+	git push
