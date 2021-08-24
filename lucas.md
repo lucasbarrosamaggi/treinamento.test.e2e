@@ -22,3 +22,14 @@ L07077c44@@
 
 Criar token Pessoal GitHub
 https://docs.github.com/pt/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+
+Comandos GIT --> 
+Saber quais as modificações para o Git. 
+	--> git status
+Adicionar arquivo para ser enviado para o Git.
+	git add "nome arquivo"
+	git add --all
+	git add .
+Commitar na branch
+	git commit -m "O que vao subir"
